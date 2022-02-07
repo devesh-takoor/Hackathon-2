@@ -51,6 +51,9 @@
   border: none;
 
 }
+.nav-item{
+    font-family: sans-serif;
+}
 
 .dropdown {
   position: relative;
@@ -75,7 +78,7 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ffff33; color: black;  border:black;}
+.dropdown-content a:hover {background-color: skyblue; color: black;  border:black;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -95,18 +98,127 @@
         }
   
         #home {
-            background-color: #ffff33;
+            background-color: lightgrey;
         }
   
         #section1 {
-            background-color: whitesmoke;
+            background-color: gray;
         }
   
         #section2 {
-            background-color: #ffff33;
+            background-color: lightgrey;
         }
   
-        
+        #rcorners1 {
+  border-radius: 200px;
+  background: white;
+  padding-top: 75px;
+  width: 200px;
+  height: 200px;  
+}
+
+.gap{
+    padding-left: 35px;
+  padding-right: 35px;
+}
+
+        #rcorners1:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+
+table{
+  text-align: center;
+  padding-top: 30px;
+  column-gap: 40px;
+}
+
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.button1 {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(180deg, yellow 0%, yellow 100%);
+  border: none;
+  border-radius: 00px;
+  box-shadow: 12px 12px 24px green;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+.button1::before {
+content: '';
+  border-radius: 00px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid black;
+  box-shadow: 0 0 60px white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button1:click, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.button1:hover::before, .button1:focus::before {
+  opacity: 1;
+}
+
+.button1::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.button1:hover::after, .button1:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
         
     </style>
 </head>
@@ -125,7 +237,7 @@
   
                             <!--Initially active class 
                                 is set to home link -->
-                            <a class="nav-link active" href="#" style="font-size:20px;">
+                            <a class="nav-link active" href="#" style="font-size:20px; font-family:sans-serif;">
                                 Home
                             </a>
                         </li>
@@ -133,13 +245,13 @@
                         <li class="nav-item">
                             
                                 <div class="dropdown">
-                                    <a class="nav-link" href="#section1" style="padding-left:360px">
+                                    <a class="nav-link" href="#section1" style="padding-left:350px">
                                   <button class="dropbtn">Categories <i class="fas fa-caret-down"></i></button>
                                   <div class="dropdown-content">
-                                    <a href="#a">Link 1</a>
-                                    <a href="#b">Link 2</a>
-                                    <a href="#c">Link 3</a>
-                                    <a href="#d">Link 4</a>
+                                    <a href="c1.html">Hardware & Appliances</a>
+                                    <a href="c2.html">Medical</a>
+                                    <a href="c3.html">Vehicle</a>
+                                    <a href="c4.html">Housing</a>
                                   </div>
                                   </a>
                                 </div>
@@ -154,16 +266,27 @@
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="#section3" style="margin-left:305px;">
+                            <a class="nav-link" href="signup.html" style="margin-left:250px;">
                                 Sign Up <i class="fas fa-user-plus"></i>
                             </a>
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="#section4">
+                            <a class="nav-link" href="login.html">
                                 Login <i class="fas fa-sign-in-alt"></i>
                             </a>
                         </li>
+
+                        <li class="nav-item" id="xyz">
+                            <a class="nav-link" style="margin-left: 24px; z-index: 1;">
+                                <i class="fas fa-user-circle"></i>
+                            </a>
+                            <ul id="profile" style="margin-left: -10%;width: 17%; z-index:1"></ul>
+                        </li>
+
+
+
+                        
                     </ul>
                 </div>
             </div>
@@ -172,11 +295,48 @@
         <br><br>
         <!-- creating sections -->
         <section id="home" class="page-section">
-            Home </section>
+            <h2>Home</h2> </section>
         <section id="section1" class="page-section">
-            Categories </section>
+            <h2>Categories</h2> <br>
+            <table style="margin-top:50px; display: flex; justify-content: center; "  >
+            <tr>
+                <td class = "gap"><a href="c1.html">
+                    <p id="rcorners1" >Hardware & Appliances</p>
+                    </a>
+                </td>
+
+                <td class = "gap"><a href="c2.html">
+                    <p id="rcorners1">Medical</p>
+                    </a>
+                </td>
+                <td class = "gap"><a href="c3.html">
+                    <p id="rcorners1">Vehicles</p></a>
+                </td>
+                <td class = "gap"><a href="c4.html">
+                    <p id="rcorners1">Housing</p></a>
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="margin-top: 30px; display: flex; justify-content: center;">
+            <tr>
+                <td> 
+                    <div class="wrap" >
+                        <button1 class="button1" >Lessor</button1>
+                    </div>
+                </td>
+                <br>
+                <td>
+                    <div class="wrap" >
+                        <button1 class="button1">Tenant</button1>
+                    </div>
+                </td>
+            </tr>
+        </table>
+            </div></section>
         <section id="section2" class="page-section">
-            Contact Us </section>
+            <h2>Contact Us</h2> </section>
         
   
         <!-- JavaScript code -->

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Medical</title>
+	<link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity=
+"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+      <style>
+        html {
+            /*For smooth scrolling behavior*/
+            scroll-behavior: smooth;
+        }
+.dropbtn {
+  background-color: black;
+  color: gray;
+  font-size: 16px;
+  border: none;
+
+}
+.nav-item{
+    font-family: sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: 350px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: skyblue; color: black;  border:black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: black; color: white;}
+</style>
+
+
+  
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity=
+"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+  
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity=
+"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+	<section id="navigation">
+        <nav class="navbar navbar-expand-sm 
+            navbar-dark fixed-top" style="background-color:#000000;">
+            <div class="container">
+                
+  
+                <div class=" navbar-default">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+  
+                            <!--Initially active class 
+                                is set to home link -->
+                            <a class="nav-link active" href="home.html" style="font-size:20px; font-family:sans-serif;">
+                                Home
+                            </a>
+                        </li>
+  
+                        <li class="nav-item">
+                            
+                                <div class="dropdown">
+                                    <a class="nav-link" href="home.html#section1" style="padding-left:350px">
+                                  <button class="dropbtn">Categories <i class="fas fa-caret-down"></i></button>
+                                  <div class="dropdown-content">
+                                    <a href="c1.html">Hardware & Appliances</a>
+                                    <a href="c2.html">Medical</a>
+                                    <a href="c3.html">Vehicle</a>
+                                    <a href="c4.html">Housing</a>
+                                  </div>
+                                  </a>
+                                </div>
+
+                            
+                        </li>
+  
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html#section2">
+                                Contact Us
+                            </a>
+                        </li>
+  
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html" style="margin-left:250px;">
+                                Sign Up <i class="fas fa-user-plus"></i>
+                            </a>
+                        </li>
+  
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                Login <i class="fas fa-sign-in-alt"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item" id="xyz">
+                            <a class="nav-link" style="margin-left: 24px; z-index: 1;">
+                                <i class="fas fa-user-circle"></i>
+                            </a>
+                            <ul id="profile" style="margin-left: -10%;width: 17%; z-index:1"></ul>
+                        </li>
+
+
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+			<h1>Medical</h1>
+			<h1>Medical</h1>        
+</body>
+</html>
