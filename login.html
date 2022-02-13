@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In </title>
+    <link rel="icon" href="static/pictures/MR.ico">
  
 
 
@@ -22,13 +23,14 @@
       
         
         html {
-            background: grey;
+            background: white;
             color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
         
         body {
             padding-top: 25vh;
+            background-color: white;
         }
         
         .container {
@@ -52,7 +54,7 @@
             height: 30px;
             border: 2px solid #e1dede69;
             border-radius: 5px;
-            background: #777272;
+            background: white;
             color: black;
             text-align: center;
             outline: none;
@@ -152,61 +154,7 @@
             display: none;
         }</style>
 
-<script>
-        const signup = document.querySelector(".signup");
-        const termCond = document.querySelector("#accept");
-        const password = document.querySelector("#password");
-        const confirmPassword = document.querySelector("#confirmPassword");
-        const pwd_format = document.querySelector(".pwd-format");
-        // lets define a password format
-        // The password should contain around 8-15 alhpanumeric character
 
-        const passwordPattern = /^[a-zA-Z0-9]{8,15}$/
-
-        password.addEventListener('focusin', () => {
-            pwd_format.style.display = 'block';
-
-            // now lets check the password entered by the user
-            password.addEventListener('keyup', () => {
-                if (passwordPattern.test(password.value)) {
-                    password.style.borderColor = 'green' // if password pattern matches the border of password input will ne green
-                    pwd_format.style.color = 'green'
-                } else {
-                    password.style.borderColor = 'red'
-                    pwd_format.style.color = 'red'
-                }
-            })
-        })
-
-        password.addEventListener('focusout', () => {
-            pwd_format.style.display = 'none';
-        })
-
-        confirmPassword.addEventListener('focusin', () => {
-            pwd_format.style.display = 'block';
-            confirmPassword.addEventListener('keyup', () => {
-                if (passwordPattern.test(confirmPassword.value) && password.value === confirmPassword.value) {
-                    confirmPassword.style.borderColor = 'green' // if password pattern matches the border of password input will ne green
-                    pwd_format.style.color = 'green'
-                } else {
-                    confirmPassword.style.borderColor = 'red'
-                    pwd_format.style.color = 'red'
-                }
-            })
-        })
-
-        confirmPassword.addEventListener('focusout', () => {
-            pwd_format.style.display = 'none';
-        })
-
-        termCond.addEventListener('change', () => {
-            if (termCond.checked === true) {
-                signup.disabled = false;
-            } else if (termCond.checked === false) {
-                signup.disabled = true;
-            }
-        })
-    </script>
 
     <div class="container">
         <h2>Log In</h2>
@@ -230,7 +178,7 @@
             <div class="form-btns">
                 <button class="signup" type="submit" disabled>Log In</button>
                 <div class="options">
-                    Don't have an account? <a href="signup.html">Create account</a>
+                    Don't have an account? <a href="/signup">Create account</a>
                 </div>
             </div>
 

@@ -10,6 +10,10 @@
 "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel="icon" href="static/pictures/MR.ico">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
 
       <style>
         html {
@@ -50,11 +54,337 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: skyblue; color: black;  border:black;}
+.dropdown-content a:hover {background-color: #ffff33; color: black;  border:black;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: black; color: white;}
+
+.f1 {
+        background-color: white;
+        width: 600px;
+        height: 44px;
+        border-radius: 5px;
+        border: 5px solid black;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+      }
+
+      input {
+        all: unset;
+        font: 16px system-ui;
+        color: black;
+        height: 60%;
+        width: 100%;
+        padding: 6px 12px;
+      }
+
+      ::placeholder {
+        color: black;
+        opacity: 0.7; 
+      }
+
+      svg {
+        color: black;
+        fill: currentColor;
+
+        padding: 10px;
+      }
+
+      .btn {
+        all: unset;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+      }
+
+
+ @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+#contact {
+width: 475px;
+margin:2em auto;
+
+position: relative;
+float: right;
+
+}
+#contact::after {
+
+display: block;
+height: 10px;
+width: 90%;
+left: 5%;
+bottom: 0;
+position: absolute;
+-webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+border-radius: 100%;
+z-index: -1;
+
+}
+#contact article {
+  padding: 1em;
+}
+#contact h1 {
+background: grey;
+font-family: Oswald ,sans-serif;
+font-size: 1.75em;
+padding: 0.6em 0 0.6em 0.4em;
+color: white;
+text-shadow: 0 0.06em 0 #424242;
+position: relative;
+}
+.contactbutton {
+background: #ffff33;
+-webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+text-align: center;
+display: block;
+width: 100%;
+height: 50px;
+margin-top: 20px;
+margin-bottom: 2px;
+cursor: pointer;
+}
+.contactbutton:hover {
+-webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+}
+.mail {
+margin-top: 11px;
+font-size: 15px;
+display: inline-block;
+height: 0;
+width: 0;
+position: relative;
+}
+.mail:before {
+top: -2.5em;
+left: -2.95em;
+display: block;
+position: absolute;
+border-top: 1.2em solid #832032;
+border-left: 1.6em solid transparent;
+border-right: 1.6em solid transparent;
+border-bottom: 1em solid transparent;
+font-size: 0.8em;
+
+}
+.mail::after {
+display: block;
+position: absolute;
+border-top: 2em solid transparent;
+border-right: 2.6em solid #832032;
+height: 0;
+width: 0;
+left: -2.18em;
+bottom: 0;
+
+}
+#checkcontact{
+position: absolute;
+left: -9999px;
+
+}
+.contactform {
+overflow: hidden;
+max-height: 0px;
+-webkit-transition: all linear 1s;
+-moz-transition: all linear 1s;
+-o-transition: all linear 1s;
+-ms-transition: all linear 1s;
+transition: all linear 1s;
+background:grey;
+}
+#checkcontact:checked + .contactform {
+max-height: 1000px;
+}
+.input_wrapper {
+position: relative;
+}
+.textarea_wrapper textarea {
+margin-top: 10px;
+display: block;
+width: 100%;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+}
+.input_wrapper input[type="text"] {
+margin-top: 1em;
+display: block;
+width: 100%;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+text-indent: 15%;
+
+}
+.input_wrapper input[type="text"]:focus {
+background: white;
+box-shadow: inset 2px 2px 5px 0 #DADADA;
+outline: none;
+text-indent: 0;
+}
+.input_wrapper label {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+background: #ffff33;
+color: black;
+font-family: Oswald ,sans-serif;
+box-sizing: border-box;
+width: 25%;
+text-align: center;
+line-height: 2.8em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.input_wrapper input[type="text"]:focus + label {
+left: 75%;
+}
+.textarea_wrapper textarea {
+margin-top: 20px;
+display: block;
+width: 100%;
+  min-height:150px;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+}
+.textarea_wrapper textarea:focus {
+background: rgba(242, 56, 90, 0.05);
+box-shadow: inset 2px 2px 5px 0 #DADADA;
+outline: none;
+}
+.submit_wrapper {
+text-align: center;
+}
+.submit_wrapper input {
+text-align: center;
+display: inline-block;
+width: 40%;
+height: 50px;
+margin-top: 1em;
+margin-bottom: 6px;
+cursor: pointer;
+background: #ffff33;
+color: black;
+font-family: Oswald ,sans-serif;
+font-size: 1em;
+border: none;
+-webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+-webkit-appearance: none;
+  -webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.submit_wrapper input:hover {
+-webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+}
+
+@media (max-width: 500px){
+#contact {
+width: 100%;
+}
+  .input_wrapper label {
+line-height: 3.5em;
+font-size: 0.8em;
+}
+}
+
+.img-thumb {
+  max-height: 75px;
+  border: 2px solid none;
+   border-radius:3px;
+  padding: 1px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.img-thumb-wrapper {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  background-color: grey;
+}
+.remove {
+  display: block;
+  background: black;
+  border: 1px solid none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.remove:hover {
+  background: white;
+  color: black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  
+  width: 100%;
+}
+
+td, th {
+
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+ 
+}
+
 </style>
 
 
@@ -79,6 +409,36 @@
 "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous">
     </script>
+    <script type="text/javascript">
+        
+
+
+       $(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $("#files").on("change", function(e) {
+      var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<div class=\"img-thumb-wrapper card shadow\">" +
+            "<img class=\"img-thumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove\">Remove</span>" +
+            "</div>").insertAfter("#files");
+          $(".remove").click(function(){
+            $(this).parent(".img-thumb-wrapper").remove();
+          });
+          
+        });
+        fileReader.readAsDataURL(f);
+      }
+      console.log(files);
+    });
+  } 
+});
+    </script>
 </head>
 <body>
 	<section id="navigation">
@@ -93,21 +453,21 @@
   
                             <!--Initially active class 
                                 is set to home link -->
-                            <a class="nav-link active" href="home.html" style="font-size:20px; font-family:sans-serif;">
-                                Home
+                            <a class="nav-link active" href="/" style=" font-family:sans-serif; margin-top: -1px;">
+                                <b style="color:#ffff33; ">MAU</b><b style="color:lightgrey;">RENT</b>
                             </a>
                         </li>
   
                         <li class="nav-item">
                             
                                 <div class="dropdown">
-                                    <a class="nav-link" href="home.html#section1" style="padding-left:350px">
+                                    <a class="nav-link" href="/#section1" style="padding-left:350px">
                                   <button class="dropbtn">Categories <i class="fas fa-caret-down"></i></button>
                                   <div class="dropdown-content">
-                                    <a href="c1.html">Hardware & Appliances</a>
-                                    <a href="c2.html">Medical</a>
-                                    <a href="c3.html">Vehicle</a>
-                                    <a href="c4.html">Housing</a>
+                                    <a href="/c1">Hardware & Appliances</a>
+                                    <a href="/c2">Medical</a>
+                                    <a href="/c3">Vehicle</a>
+                                    <a href="/c4">Accommodation</a>
                                   </div>
                                   </a>
                                 </div>
@@ -116,19 +476,19 @@
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="home.html#section2">
+                            <a class="nav-link" href="/#section2">
                                 Contact Us
                             </a>
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="signup.html" style="margin-left:250px;">
+                            <a class="nav-link" href="/signup" style="margin-left:220px;">
                                 Sign Up <i class="fas fa-user-plus"></i>
                             </a>
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="/login">
                                 Login <i class="fas fa-sign-in-alt"></i>
                             </a>
                         </li>
@@ -147,7 +507,61 @@
                 </div>
             </div>
         </nav>
-		<h1>Vehicle</h1>        
-		<h1>Vehicle</h1>
+			<h1>Vehicle</h1>
+    <table>
+        <tr>
+            <th style="position: absolute;">
+			<form role="search" id="f1" class="f1" style="margin-left:50px;margin-top: 50px;">
+      <input type="search" id="query" name="q" placeholder="Search for products..." aria-label="Search through site content">
+      <button class = "btn">
+        <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+      </button>
+    </form>    
+</section>
+</th>
+<th>
+
+
+<section id="contact">
+  <div class="sectionheader">
+    
+      <label for="checkcontact" class="contactbutton" style="padding-top:10px;">Add New Product<div class="mail"></div></label><input id="checkcontact" type="checkbox" >
+  
+      <form action="" method="post" class="contactform" style="">
+        <h3 style="margin-left:20px;">Upload images</h3>
+  
+          
+          <input type="file" id="files" name="files[]" multiple class="form-control"  /><br>
+  
+
+
+        <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">Product name</label></p>
+        <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">Brand/Model</label></p>
+        <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">Descrition</label></p>
+        <p class="input_wrapper" ><input type="text" name="contact_sujet" value="Rs "  id ="contact_sujet"><label for="contact_sujet" >Price per Day</label></p>
+        
+        <p class="submit_wrapper"><input type="submit" value="Upload Product"></p>     
+      </form>
+  </article>
+</div>
+</section>
+</th>
+</tr>
+</table>
 </body>
+<script type="text/javascript">
+	const f = document.getElementById('form');
+      const q = document.getElementById('query');
+      const google = 'https://www.google.com/search?q=site%3A+';
+      const site = 'pagedart.com';
+
+      function submitted(event) {
+        event.preventDefault();
+        const url = google + site + '+' + q.value;
+        const win = window.open(url, '_blank');
+        win.focus();
+      }
+
+      f.addEventListener('submit', submitted);
+</script>
 </html>

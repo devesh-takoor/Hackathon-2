@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="icon" href="static/pictures/MR.ico">
  
 
 
@@ -23,7 +24,7 @@
       
         
         html {
-            background: grey;
+            background: lightgrey;
             color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -38,7 +39,7 @@
             flex-direction: column;
             align-items: center;
             margin: auto;
-            height: 555px;
+            height: 515px;
             width: 400px;
             box-shadow: -3px -2px 6px #6c6565, 7px 9px 25px #0b0b0b;
             margin-top: -20px;
@@ -54,7 +55,7 @@
             height: 30px;
             border: 2px solid #e1dede69;
             border-radius: 5px;
-            background: #777272;
+            background: whitesmoke;
             color: black;
             text-align: center;
             outline: none;
@@ -137,7 +138,6 @@
         }
         
         .form-btns button:enabled {
-            cursor: not-allowed;
             background: #8f8b85 !important;
             color: rgb(131, 120, 120) !important;
         }
@@ -203,7 +203,7 @@
 }
     </style>
 
-<script>
+<!-- <script>
         const signup = document.querySelector(".signup");
         const termCond = document.querySelector("#accept");
         const password = document.querySelector("#password");
@@ -257,35 +257,36 @@
                 signup.disabled = true;
             }
         })
-    </script>
+        
+    </script> -->
 
     <div class="container">
-        <h2>Sign Up</h2>
+        <h2 style="color:#ffff33;">Sign Up</h2>
 
-        <form action="">
+        <form action="{{url_for('signup')}}" method="post" autocomplete="off">
             <div class="form-item-username">
                 <input type="text" name="firstName" id="firstName" placeholder="First Name">
                 <input type="text" name="lastName" id="lastName" placeholder="Last Name">
             </div>
             <div class="form-item">
-                <input type="nic" name="nic" id="nic" placeholder="ID Number">
+                <input type="text" name="nic" id="nic" placeholder="ID Number">
             </div>
 
             <div class="form-item">
-                <input type="phonenumber" name="phonenumber" id="phonenumber" placeholder="Phone Number" >
+                <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone Number" >
                 <i class="fas fa-info-circle tooltip" style="margin-left:100%;"><span class="tooltiptext">Enter Your WhatsApp Number!</span></i>
             </div>
 
             <div class="form-item">
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="text" name="email" id="email" placeholder="Email">
             </div>
 
             <div class="form-item">
-                <!-- add a password format display -->
+                
                 <span class="pwd-format">
                     8-15 AlphaNumeric Characters
                 </span>
-                <input type="password" name="password" id="password" placeholder="Enter password">
+                <input type="       " name="password" id="password" placeholder="Enter password">
                 <i class="fas fa-info-circle tooltip" style="margin-left:100%;"><span class="tooltiptext"><ul>
   <li>Enter 8-15 Characters</li>
   <li>A mixture of both uppercase and lowercase letters</li>
@@ -295,15 +296,12 @@
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password">
             </div>
 
-            <div class="accept-box">
-                <input type="checkbox" name="accept" id="accept">
-                <p>I accept the <a href="#">Terms & Conditions</a></p>
-            </div>
+            
 
-            <div class="form-btns">
-                <button class="signup" type="submit" disabled>Sign Up</button>
+            <div class="form-btns" >
+                <input class="signup" type="submit" name ="" value="Sign Up" style="background-color:#ffff33; height: 35px;" >
                 <div class="options">
-                    Already have an account? <a href="login.html">Login here</a>
+                    Already have an account? <a href="/login">Login here</a>
                 </div>
             </div>
 
