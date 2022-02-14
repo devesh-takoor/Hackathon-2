@@ -253,6 +253,7 @@ padding: 1em;
 transition: all 250ms ease;
 color: #5E5E5E;
 text-indent: 15%;
+margin-left: 50px;
 
 }
 .input_wrapper input[type="text"]:focus {
@@ -398,12 +399,12 @@ tr:nth-child(even) {
 }
 
 .wall{
-    background-color: blueviolet;
-    width: 720px;
+    background-color: grey;
+    width: 730px;
     float: left;
-    position: fixed;
+    position: relative;
     
-    height: auto;
+    height: 100%;
 
 }
 
@@ -412,8 +413,8 @@ tr:nth-child(even) {
         width: 200px;
         height: 200px;
         background-color: violet;
-        margin-left: 18px;
-        margin-right: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
         margin-top: 25px;
         margin-bottom: 25px;
         display: inline-block;
@@ -448,33 +449,39 @@ tr:nth-child(even) {
        
 
 
-       $(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $("#files").on("change", function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-          $("<div class=\"img-thumb-wrapper card shadow\">" +
-            "<img class=\"img-thumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-            "<br/><span class=\"remove\">Remove</span>" +
-            "</div>").insertAfter("#files");
-          $(".remove").click(function(){
-            $(this).parent(".img-thumb-wrapper").remove();
-          });
+        $(document).ready(function() {
+   if (window.File && window.FileList && window.FileReader) {
+     $("#files").on("change", function(e) {
+       var files = e.target.files,
+         filesLength = files.length;
+       for (var i = 0; i < filesLength; i++) {
+         var f = files[i]
+         var fileReader = new FileReader();
+         fileReader.onload = (function(e) {
+           var file = e.target;
+           $("<div class=\"img-thumb-wrapper card shadow\">" +
+             "<img class=\"img-thumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+             "<br/><span class=\"remove\">Remove</span>" +
+             "</div>").insertAfter("#files");
+           $(".remove").click(function(){
+             $(this).parent(".img-thumb-wrapper").remove();
+           });
           
-        });
-        fileReader.readAsDataURL(f);
-      }
-      console.log(files);
+         });
+         fileReader.readAsDataURL(f);
+       }
+       const uploaded = files[i];
+       console.log(uploaded);
+      
 
-    });
+     });
 
-  } 
-});
+   } 
+ });
+
+
+
+      
     </script>
 </head>
 <body>
@@ -557,17 +564,7 @@ tr:nth-child(even) {
 </section>
 <br>
 <section>
-    <div class="wall">
-        <div class="sq1">box1</div>
-        <div class="sq1">box2</div>
-        <div class="sq1">box3</div>
-                <div class="sq1">box1</div>
-        <div class="sq1">box2</div>
-        <div class="sq1">box3</div>
-                <div class="sq1">box1</div>
-        <div class="sq1">box2</div>
-        <div class="sq1">box3</div>
-    </div>
+
 </section>
 </th>
 
@@ -581,18 +578,18 @@ tr:nth-child(even) {
     
       <label for="checkcontact" class="contactbutton" style="padding-top:10px;">Add New Product<div class="mail"></div></label><input id="checkcontact" type="checkbox" >
   
-      <form action="" method="post" class="contactform" style="">
+      <form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data" class="contactform"  style="">
         <h3 style="margin-left:20px;">Upload images</h3>
   
           
-          <input type="file" id="files" name="files[]" multiple class="form-control"  /><br>
+          <input type="file" name="files[]" multiple class="form-control"  /><br>
   
 
 
         <p class="input_wrapper"><input type="text" name="productname1" value=""  id ="contact_nom"><label for="contact_nom">Product name</label></p>
         <p class="input_wrapper"><input type="text" name="productmodel1" value=""  id ="contact_email"><label for="contact_email">Brand/Model</label></p>
         <p class="input_wrapper"><input type="text" name="productdescription1" value=""  id ="contact_email"><label for="contact_email">Descrition</label></p>
-        <p class="input_wrapper" ><input type="text" name="productprice1" value="Rs "  id ="contact_sujet"><label for="contact_sujet" >Price per Day</label></p>
+        <p class="input_wrapper" ><input type="text" name="productprice1" value=""  id ="contact_sujet"><label for="contact_sujet" >Price per Day</label></p>
         
         <p class="submit_wrapper"><input type="submit" value="Upload Product"></p>     
       </form>
@@ -606,7 +603,26 @@ tr:nth-child(even) {
 
 </table>
 
-    
+    <div class="wall">
+        {% for column in data %}
+        <div class="sq1">
+            {% set list1 = column[1].split(';') %}
+            {% for item in list1 %}
+                <img src="{{ url_for('static', filename=item) }}" width="100px" height="100px" />
+                <p>{{ item }}<p/>
+            {% endfor %} 
+        <tr>
+            <td>{{column[0]}}</td>
+            <td>{{column[1]}}</td>
+            <td>{{column[2]}}</td>
+            <td>{{column[3]}}</td>
+            <td>{{column[4]}}</td>
+            <td>{{column[5]}}</td>
+            <br>
+        </tr>
+        </div>
+        {%endfor%}
+    </div>
     
 </section>
 </body>

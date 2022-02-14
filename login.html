@@ -159,7 +159,7 @@
     <div class="container">
         <h2>Log In</h2>
 
-        <form action="">
+        <form action="{{url_for('login')}}">
             
             <div class="form-item">
                 <input type="email" name="email" id="email" placeholder="Email">
@@ -176,7 +176,7 @@
 
             
             <div class="form-btns">
-                <button class="signup" type="submit" disabled>Log In</button>
+                <input class="login" type="submit" name ="" value="Log In" style="background-color:#ffff33; height: 35px;">
                 <div class="options">
                     Don't have an account? <a href="/signup">Create account</a>
                 </div>
