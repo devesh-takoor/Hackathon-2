@@ -5,12 +5,12 @@ import re
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import os
-UPLOAD_FOLDER = 'static/'
+UPLOAD_FOLDER1 = 'static/upload1'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.secret_key = 'cairocoders-ednalan'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER1'] = UPLOAD_FOLDER1
 
 DB_HOST = "localhost"
 DB_NAME = "s10"
@@ -91,7 +91,7 @@ def upload():
       files = request.files.getlist("files[]")
       for file in files:
          filename = secure_filename(file.filename)
-         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+         file.save(os.path.join(app.config['UPLOAD_FOLDER1'], filename))
          filenames += filename + ';'
       filenames=filenames[:-1]
       productname1 = request.form['productname1']
