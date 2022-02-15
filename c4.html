@@ -1,566 +1,650 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Accommodation</title>
-		<link rel="stylesheet" href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity=
-"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Accommodation</title>
+      <link rel="stylesheet" href=
+         "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity=
+         "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+         crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <link rel="icon" href="static/pictures/MR.ico">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-
-      <style>
-        html {
-            /*For smooth scrolling behavior*/
-            scroll-behavior: smooth;
-        }
-.dropbtn {
-  background-color: black;
-  color: gray;
-  font-size: 16px;
-  border: none;
-
-}
-.nav-item{
-    font-family: sans-serif;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #000000;
-  color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  margin-left: 350px;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ffff33; color: black;  border:black;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: black; color: white;}
-
-.f1 {
-        background-color: white;
-        width: 600px;
-        height: 44px;
-        border-radius: 5px;
-        border: 5px solid black;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <style>
+      html {
+      /*For smooth scrolling behavior*/
+      scroll-behavior: smooth;
       }
-
+      .dropbtn {
+      background-color: black;
+      color: gray;
+      font-size: 16px;
+      border: none;
+      }
+      .nav-item{
+      font-family: sans-serif;
+      }
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000000;
+      color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      margin-left: 350px;
+      }
+      .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      }
+      .dropdown-content a:hover {background-color: #ffff33; color: black;  border:black;}
+      .dropdown:hover .dropdown-content {display: block;}
+      .dropdown:hover .dropbtn {background-color: black; color: white;}
+      .f1 {
+      background-color: white;
+      width: 600px;
+      height: 44px;
+      border-radius: 5px;
+      border: 5px solid black;
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      }
       input {
-        all: unset;
-        font: 16px system-ui;
-        color: black;
-        height: 60%;
-        width: 100%;
-        padding: 6px 12px;
+      all: unset;
+      font: 16px system-ui;
+      color: black;
+      height: 60%;
+      width: 100%;
+      padding: 6px 12px;
       }
-
       ::placeholder {
-        color: black;
-        opacity: 0.7; 
+      color: black;
+      opacity: 0.7; 
       }
-
       svg {
-        color: black;
-        fill: currentColor;
-
-        padding: 10px;
+      color: black;
+      fill: currentColor;
+      padding: 10px;
       }
-
       .btn {
-        all: unset;
-        cursor: pointer;
-        width: 44px;
-        height: 44px;
+      all: unset;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+      #contact {
+      width: 440px;
+      position: relative;
+      margin-top: -280px;
+      float: right;
+      }
+      #contact::after {
+      display: block;
+      height: 10px;
+      width: 100%;
+      bottom: 0;
+      position: absolute;
+      -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 100%;
+      z-index: -1;
+      }
+      #contact article {
+      padding: 1em;
+      }
+      #contact h1 {
+      background: grey;
+      font-family: Oswald ,sans-serif;
+      font-size: 1.75em;
+      color: white;
+      text-shadow: 0 0.06em 0 #424242;
+      position: absolute;
+      }
+      .contactbutton {
+      background: #ffff33;
+      -webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+      box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+      text-align: center;
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+      margin-bottom: 2px;
+      cursor: pointer;
+      }
+      .contactbutton:hover {
+      -webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+      box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+      margin-top: 22px;
+      margin-bottom: 0px;
+      }
+      .mail {
+      margin-top: 11px;
+      font-size: 15px;
+      display: inline-block;
+      height: 0;
+      width: 0;
+      position: relative;
+      }
+      .mail:before {
+      top: -2.5em;
+      left: -2.95em;
+      display: block;
+      position: absolute;
+      border-top: 1.2em solid #832032;
+      border-left: 1.6em solid transparent;
+      border-right: 1.6em solid transparent;
+      border-bottom: 1em solid transparent;
+      font-size: 0.8em;
+      }
+      .mail::after {
+      display: block;
+      position: absolute;
+      border-top: 2em solid transparent;
+      border-right: 2.6em solid #832032;
+      height: 0;
+      width: 0;
+      left: -2.18em;
+      bottom: 0;
+      }
+      #checkcontact{
+      position: absolute;
+      left: -9999px;
+      }
+      .contactform {
+      overflow: hidden;
+      max-height: 0px;
+      -webkit-transition: all linear 1s;
+      -moz-transition: all linear 1s;
+      -o-transition: all linear 1s;
+      -ms-transition: all linear 1s;
+      transition: all linear 1s;
+      background:grey;
+      }
+      #checkcontact:checked + .contactform {
+      max-height: 1000px;
+      }
+      .input_wrapper {
+      position: relative;
+      }
+      .textarea_wrapper textarea {
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      background: white;
+      border: 1px solid #DADADA;
+      box-shadow: 0 0 1px 0 #E4E4E4;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      color: #5E5E5E;
+      }
+      .input_wrapper input[type="text"] {
+      margin-top: 1em;
+      display: block;
+      width: 100%;
+      background: white;
+      border: 1px solid #DADADA;
+      box-shadow: 0 0 1px 0 #E4E4E4;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      color: #5E5E5E;
+      text-indent: 15%;
+      }
+      .input_wrapper input[type="text"]:focus {
+      background: white;
+      box-shadow: inset 2px 2px 5px 0 #DADADA;
+      outline: none;
+      text-indent: 0;
+      }
+      .input_wrapper label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: #ffff33;
+      color: black;
+      font-family: Oswald ,sans-serif;
+      box-sizing: border-box;
+      width: 25%;
+      text-align: center;
+      line-height: 2.8em;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      }
+      .input_wrapper input[type="text"]:focus + label {
+      left: 75%;
+      }
+      .textarea_wrapper textarea {
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+      min-height:150px;
+      background: white;
+      border: 1px solid #DADADA;
+      box-shadow: 0 0 1px 0 #E4E4E4;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      color: #5E5E5E;
+      }
+      .textarea_wrapper textarea:focus {
+      background: rgba(242, 56, 90, 0.05);
+      box-shadow: inset 2px 2px 5px 0 #DADADA;
+      outline: none;
+      }
+      .submit_wrapper {
+      text-align: center;
+      }
+      .submit_wrapper input {
+      text-align: center;
+      display: inline-block;
+      width: 40%;
+      height: 50px;
+      margin-top: 1em;
+      margin-bottom: 6px;
+      cursor: pointer;
+      background: #ffff33;
+      color: black;
+      font-family: Oswald ,sans-serif;
+      font-size: 1em;
+      border: none;
+      -webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+      box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+      -webkit-appearance: none;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      }
+      .submit_wrapper input:hover {
+      -webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+      box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+      margin-top: 22px;
+      margin-left: 2px;
+      margin-bottom: 0px;
+      }
+      @media (max-width: 500px){
+      #contact {
+      width: 100%;
+      }
+      .input_wrapper label {
+      line-height: 3.5em;
+      font-size: 0.8em;
+      }
+      }
+      .img-thumb {
+      max-height: 75px;
+      border: 2px solid none;
+      border-radius:3px;
+      padding: 1px;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-right: 10px;
+      }
+      .img-thumb-wrapper {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      background-color: grey;
+      }
+      .remove {
+      display: block;
+      background: black;
+      border: 1px solid none;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-right: 10px;
+      }
+      .remove:hover {
+      background: white;
+      color: black;
+      }
+      .pop {
+      font-size: 1em;
+      padding: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      color: #ffff33;
+      border: 2px solid #ffff33;
+      border-radius: 20px/50px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+      background-color: black;
+      }
+      .pop:hover {
+      background: grey;
+      }
+      .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      }
+      .overlay:target {
+      visibility: visible;
+      opacity: 1;
+      overflow-y: scroll;
+      height: 100%;
+      }
+      .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #000;
+      border-radius: 5px;
+      width: 50%;
+      position: relative;
+      transition: all 5s ease-in-out;
+      }
+      .popup h2 {
+      margin-top: 0;
+      color: #ffff33;
+      font-family: Tahoma, Arial, sans-serif;
+      }
+      .popup h3 {
+      margin-top: 0;
+      color: lightgrey;
+      font-family: Tahoma, Arial, sans-serif;
+      }
+      .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      }
+      .popup .close:hover {
+      color: #ffff33;
+      }
+      .popup .content {
+      max-height: 30%;
+      overflow: auto;
+      }
+      @media screen and (max-width: 700px){
+      .box{
+      width: 100%;
+      }
+      .popup{
+      width: 100%;
+      }
+      }
+      table {
+      font-family: arial, sans-serif;
+      width: 100%;
+      }
+      td, th {
+      text-align: left;
+      padding: 8px;
+      }
+      tr:nth-child(even) {
       }
 
-
- @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-#contact {
-width: 475px;
-margin:2em auto;
-
-position: relative;
-float: right;
-
-}
-#contact::after {
-
-display: block;
-height: 10px;
-width: 90%;
-left: 5%;
-bottom: 0;
-position: absolute;
--webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-border-radius: 100%;
-z-index: -1;
-
-}
-#contact article {
-  padding: 1em;
-}
-#contact h1 {
-background: grey;
-font-family: Oswald ,sans-serif;
-font-size: 1.75em;
-padding: 0.6em 0 0.6em 0.4em;
-color: white;
-text-shadow: 0 0.06em 0 #424242;
-position: relative;
-}
-.contactbutton {
-background: #ffff33;
--webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
-text-align: center;
-display: block;
-width: 100%;
-height: 50px;
-margin-top: 20px;
-margin-bottom: 2px;
-cursor: pointer;
-}
-.contactbutton:hover {
--webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
-margin-top: 22px;
-margin-left: 2px;
-margin-bottom: 0px;
-}
-.mail {
-margin-top: 11px;
-font-size: 15px;
-display: inline-block;
-height: 0;
-width: 0;
-position: relative;
-}
-.mail:before {
-top: -2.5em;
-left: -2.95em;
-display: block;
-position: absolute;
-border-top: 1.2em solid #832032;
-border-left: 1.6em solid transparent;
-border-right: 1.6em solid transparent;
-border-bottom: 1em solid transparent;
-font-size: 0.8em;
-
-}
-.mail::after {
-display: block;
-position: absolute;
-border-top: 2em solid transparent;
-border-right: 2.6em solid #832032;
-height: 0;
-width: 0;
-left: -2.18em;
-bottom: 0;
-
-}
-#checkcontact{
-position: absolute;
-left: -9999px;
-
-}
-.contactform {
-overflow: hidden;
-max-height: 0px;
--webkit-transition: all linear 1s;
--moz-transition: all linear 1s;
--o-transition: all linear 1s;
--ms-transition: all linear 1s;
-transition: all linear 1s;
-background:grey;
-}
-#checkcontact:checked + .contactform {
-max-height: 1000px;
-}
-.input_wrapper {
-position: relative;
-}
-.textarea_wrapper textarea {
-margin-top: 10px;
-display: block;
-width: 100%;
-background: white;
-border: 1px solid #DADADA;
-box-shadow: 0 0 1px 0 #E4E4E4;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-padding: 1em;
--webkit-transition: all 250ms ease;
--moz-transition: all 250ms ease;
--ms-transition: all 250ms ease;
--o-transition: all 250ms ease;
-transition: all 250ms ease;
-color: #5E5E5E;
-}
-.input_wrapper input[type="text"] {
-margin-top: 1em;
-display: block;
-width: 100%;
-background: white;
-border: 1px solid #DADADA;
-box-shadow: 0 0 1px 0 #E4E4E4;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-padding: 1em;
--webkit-transition: all 250ms ease;
--moz-transition: all 250ms ease;
--ms-transition: all 250ms ease;
--o-transition: all 250ms ease;
-transition: all 250ms ease;
-color: #5E5E5E;
-text-indent: 15%;
-
-}
-.input_wrapper input[type="text"]:focus {
-background: white;
-box-shadow: inset 2px 2px 5px 0 #DADADA;
-outline: none;
-text-indent: 0;
-}
-.input_wrapper label {
-position: absolute;
-left: 0;
-top: 0;
-height: 100%;
-background: #ffff33;
-color: black;
-font-family: Oswald ,sans-serif;
-box-sizing: border-box;
-width: 25%;
-text-align: center;
-line-height: 2.8em;
--webkit-transition: all 250ms ease;
--moz-transition: all 250ms ease;
--ms-transition: all 250ms ease;
--o-transition: all 250ms ease;
-transition: all 250ms ease;
-}
-.input_wrapper input[type="text"]:focus + label {
-left: 75%;
-}
-.textarea_wrapper textarea {
-margin-top: 20px;
-display: block;
-width: 100%;
-  min-height:150px;
-background: white;
-border: 1px solid #DADADA;
-box-shadow: 0 0 1px 0 #E4E4E4;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-padding: 1em;
--webkit-transition: all 250ms ease;
--moz-transition: all 250ms ease;
--ms-transition: all 250ms ease;
--o-transition: all 250ms ease;
-transition: all 250ms ease;
-color: #5E5E5E;
-}
-.textarea_wrapper textarea:focus {
-background: rgba(242, 56, 90, 0.05);
-box-shadow: inset 2px 2px 5px 0 #DADADA;
-outline: none;
-}
-.submit_wrapper {
-text-align: center;
-}
-.submit_wrapper input {
-text-align: center;
-display: inline-block;
-width: 40%;
-height: 50px;
-margin-top: 1em;
-margin-bottom: 6px;
-cursor: pointer;
-background: #ffff33;
-color: black;
-font-family: Oswald ,sans-serif;
-font-size: 1em;
-border: none;
--webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
--webkit-appearance: none;
-  -webkit-transition: all 250ms ease;
--moz-transition: all 250ms ease;
--ms-transition: all 250ms ease;
--o-transition: all 250ms ease;
-transition: all 250ms ease;
-}
-.submit_wrapper input:hover {
--webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
-margin-top: 22px;
-margin-left: 2px;
-margin-bottom: 0px;
-}
-
-@media (max-width: 500px){
-#contact {
-width: 100%;
-}
-  .input_wrapper label {
-line-height: 3.5em;
-font-size: 0.8em;
-}
-}
-
-.img-thumb {
-  max-height: 75px;
-  border: 2px solid none;
-   border-radius:3px;
-  padding: 1px;
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.img-thumb-wrapper {
-  display: inline-block;
-  margin: 10px 10px 0 0;
-  background-color: grey;
-}
-.remove {
-  display: block;
-  background: black;
-  border: 1px solid none;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.remove:hover {
-  background: white;
-  color: black;
-}
-
-table {
-  font-family: arial, sans-serif;
-  
-  width: 100%;
-}
-
-td, th {
-
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
- 
-}
-
-</style>
-
-
-  
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-        integrity=
-"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
-    </script>
-      
-    <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity=
-"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous">
-    </script>
-  
-    <script src=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity=
-"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript">
-        
-
-       $(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $("#files").on("change", function(e) {
+      .row{
+         width: 750px;
+         background-color: white;
+      }
+   </style>
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+      integrity=
+      "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src=
+      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity=
+      "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+   <script src=
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity=
+      "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+   <script type="text/javascript">
+      $(document).ready(function() {
+      if (window.File && window.FileList && window.FileReader) {
+      $("#files").on("change", function(e) {
       var files = e.target.files,
-        filesLength = files.length;
+       filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-          $("<div class=\"img-thumb-wrapper card shadow\">" +
-            "<img class=\"img-thumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-            "<br/><span class=\"remove\">Remove</span>" +
-            "</div>").insertAfter("#files");
-          $(".remove").click(function(){
-            $(this).parent(".img-thumb-wrapper").remove();
-          });
-          
-        });
-        fileReader.readAsDataURL(f);
+       var f = files[i]
+       var fileReader = new FileReader();
+       fileReader.onload = (function(e) {
+         var file = e.target;
+         $("<div class=\"img-thumb-wrapper card shadow\">" +
+           "<img class=\"img-thumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+           "<br/><span class=\"remove\">Remove</span>" +
+           "</div>").insertAfter("#files");
+         $(".remove").click(function(){
+           $(this).parent(".img-thumb-wrapper").remove();
+         });
+         
+       });
+       fileReader.readAsDataURL(f);
       }
       console.log(files);
-    });
-  } 
-});
-    </script>
-</head>
-<body>
-	<section id="navigation">
-        <nav class="navbar navbar-expand-sm 
+      });
+      } 
+      });
+   </script>
+   </head>
+   <body style="margin-top: 5%; ">
+      <section id="navigation">
+         <nav class="navbar navbar-expand-sm 
             navbar-dark fixed-top" style="background-color:#000000;">
             <div class="container">
-                
-  
-                <div class=" navbar-default">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item ">
-  
-                            <!--Initially active class 
-                                is set to home link -->
-                            <a class="nav-link active" href="/" style=" font-family:sans-serif; margin-top: -1px;">
-                                <b style="color:#ffff33; ">MAU</b><b style="color:lightgrey;">RENT</b>
-                            </a>
-                        </li>
-  
-                        <li class="nav-item">
-                            
-                                <div class="dropdown">
-                                    <a class="nav-link" href="/#section1" style="padding-left:350px">
-                                  <button class="dropbtn">Categories <i class="fas fa-caret-down"></i></button>
-                                  <div class="dropdown-content">
-                                    <a href="/c1">Hardware & Appliances</a>
-                                    <a href="/c2">Medical</a>
-                                    <a href="/c3">Vehicle</a>
-                                    <a href="/c4">Accommodation</a>
-                                  </div>
-                                  </a>
-                                </div>
-
-                            
-                        </li>
-  
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#section2">
-                                Contact Us
-                            </a>
-                        </li>
-  
-                        <li class="nav-item">
-                            <a class="nav-link" href="/signup" style="margin-left:220px;">
-                                Sign Up <i class="fas fa-user-plus"></i>
-                            </a>
-                        </li>
-  
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">
-                                Login <i class="fas fa-sign-in-alt"></i>
-                            </a>
-                        </li>
-
-                        <li class="nav-item" id="xyz">
-                            <a class="nav-link" style="margin-left: 24px; z-index: 1;">
-                                <i class="fas fa-user-circle"></i>
-                            </a>
-                            <ul id="profile" style="margin-left: -10%;width: 17%; z-index:1"></ul>
-                        </li>
-
-
-
-                        
-                    </ul>
-                </div>
+               <div class=" navbar-default">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item ">
+                        <!--Initially active class 
+                           is set to home link -->
+                        <a class="nav-link active" href="/" style=" font-family:sans-serif; margin-top: -1px;">
+                        <b style="color:#ffff33; ">MAU</b><b style="color:lightgrey;">RENT</b>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <div class="dropdown">
+                           <a class="nav-link" href="/#section1" style="padding-left:350px">
+                              <button class="dropbtn">Categories <i class="fas fa-caret-down"></i></button>
+                              <div class="dropdown-content">
+                           <a href="/c1">Hardware & Appliances</a>
+                           <a href="/c2">Medical</a>
+                           <a href="/c3">Vehicle</a>
+                           <a href="/c4">Accommodation</a>
+                           </div>
+                           </a>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/#section2">
+                        Contact Us
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/signup" style="margin-left:220px;">
+                        Sign Up <i class="fas fa-user-plus"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                        Login <i class="fas fa-sign-in-alt"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item" id="xyz">
+                        <a class="nav-link" style="margin-left: 24px; z-index: 1;">
+                        <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul id="profile" style="margin-left: -10%;width: 17%; z-index:1"></ul>
+                     </li>
+                  </ul>
+               </div>
             </div>
-        </nav>
-			<h1>Accommodation</h1>
-    <table>
-        <tr>
+         </nav>
+      </section>
+      <table>
+         <tr>
             <th style="position: absolute;">
-			<form role="search" id="f1" class="f1" style="margin-left:50px;margin-top: 50px;">
-      <input type="search" id="query" name="q" placeholder="Search for products..." aria-label="Search through site content">
-      <button class = "btn">
-        <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
-      </button>
-    </form>    
-</section>
-</th>
-<th>
-
-
-<section id="contact">
-  <div class="sectionheader">
-    
-      <label for="checkcontact" class="contactbutton" style="padding-top:10px;">Add New Product<div class="mail"></div></label><input id="checkcontact" type="checkbox" >
-  
-      <form action="" method="post" class="contactform" style="">
-        <h3 style="margin-left:20px;">Upload images</h3>
-  
-          
-          <input type="file" id="files" name="files[]" multiple class="form-control"  /><br>
-  
-
-
-        <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">Product name</label></p>
-        <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">Brand/Model</label></p>
-        <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">Descrition</label></p>
-        <p class="input_wrapper" ><input type="text" name="contact_sujet" value="Rs "  id ="contact_sujet"><label for="contact_sujet" >Price per Day</label></p>
-        
-        <p class="submit_wrapper"><input type="submit" value="Upload Product"></p>     
-      </form>
-  </article>
-</div>
-</section>
-</th>
-</tr>
-</table>
-</body>
-<script type="text/javascript">
-	const f = document.getElementById('form');
-      const q = document.getElementById('query');
-      const google = 'https://www.google.com/search?q=site%3A+';
-      const site = 'pagedart.com';
-
-      function submitted(event) {
-        event.preventDefault();
-        const url = google + site + '+' + q.value;
-        const win = window.open(url, '_blank');
-        win.focus();
-      }
-
-      f.addEventListener('submit', submitted);
-</script>
+               <section>
+                  <form role="search" id="f1" class="f1" style="margin-left:50px;margin-top: 50px;">
+                     <input type="search" id="query" name="q" placeholder="Search for products..." aria-label="Search through site content">
+                     <button class = "btn">
+                        <svg viewBox="0 0 1024 1024">
+                           <path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path>
+                        </svg>
+                     </button>
+                  </form>
+               </section>
+            </th>
+            <th>
+               <div class="container" style="float:left; margin-top: 200px; ">
+                  <div class="row">
+                     <div class="col-lg-8" style="background-color:grey;">
+                        <div class="row">
+                           {% for column in data %}
+                           {% set list1 = column[1].split(';') %}
+                           <div class="col-lg-4 col-sm-12" style="padding-bottom: 30px;">
+                              <div class="card" style="padding-bottom:10px; width: 250px; background-color: lightgrey;">
+                                 <div style="height: 250px; width: 250px;">
+                                    <img src="{{ url_for('upload4', filename=list1[0]) }}" style="height: 250px; width: 250px; " >
+                                 </div>
+                                 <h1>{{column[2]}}</h1>
+                                 <p class="price">Rs {{column[5]}}</p>
+                                 <center>
+                                    <p><a class="pop" href="#popup{{ loop.index }}">View product</a></p>
+                                 </center>
+                              </div>
+                           </div>
+                           {%endfor%}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </th>
+            <th>
+               <section id="contact"  >
+                  <div class="sectionheader" >
+                     <label for="checkcontact" class="contactbutton" style="padding-top:10px; ">
+                        Add New Product
+                        <div class="mail"></div>
+                     </label>
+                     <input id="checkcontact" type="checkbox" >
+                     <form action="{{url_for('upload4')}}" method="post" enctype="multipart/form-data" class="contactform"  style="">
+                        <h3 style="margin-left:20px;">Upload images</h3>
+                        <input type="file" name="files[]" multiple class="form-control"  /><br>
+                        <p class="input_wrapper"><input type="text" name="productname4" value=""  id ="contact_nom"><label for="contact_nom">Product name</label></p>
+                        <p class="input_wrapper"><input type="text" name="productmodel4" value=""  id ="contact_email"><label for="contact_email">Brand/Model</label></p>
+                        <p class="input_wrapper"><input type="text" name="productdescription4" value=""  id ="contact_email"><label for="contact_email">Descrition</label></p>
+                        <p class="input_wrapper" ><input type="text" name="productprice4" value=""  id ="contact_sujet"><label for="contact_sujet" >Price per Day</label></p>
+                        <p class="submit_wrapper"><input type="submit" value="Upload Product"></p>
+                     </form>
+                  </div>
+               </section>
+            </th>
+            </div>
+            </div>
+            </div>
+            </th>
+         </tr>
+      </table>
+      {% for column in data %}
+      {% set list1 = column[1].split(';') %}
+      <div id="popup{{ loop.index }}" class="overlay" >
+         <div class="popup">
+            <h2>{{column[2]}}</h2>
+            <h3>{{column[3]}}</h3>
+            <h3>{{column[4]}}</h3>
+            <h3>Rs {{column[5]}}</h3>
+            <a class="close" href="#">&times;</a>
+            <center><div style="height:500px; width: 500px; " id="demo-{{loop.index}}" class="carousel slide" data-ride="carousel">
+               <!-- Indicators -->
+               
+               <!-- The slideshow -->
+               <div class="carousel-inner">
+                  {% for item in list1 %}
+                  {% if loop.index == 1 %}
+                  <div class="carousel-item active">
+                     <img src="{{ url_for('upload4', filename=item) }}" class="d-block w-100" alt="...">
+                  </div>
+                  {% else %}
+                  <div class="carousel-item">
+                     <img src="{{ url_for('upload4', filename=item) }}" class="d-block w-100" alt="...">
+                  </div>
+                  {% endif %}
+                  {%endfor%}
+               </div>
+               <!-- Left and right controls -->
+               <a class="carousel-control-prev" href="#demo-{{loop.index}}" data-slide="prev">
+               <span class="carousel-control-prev-icon"></span>
+               </a>
+               <a class="carousel-control-next" href="#demo-{{loop.index}}" data-slide="next">
+               <span class="carousel-control-next-icon"></span>
+               </a>
+            </div></center>
+         </div>
+      </div>
+      {%endfor%} 
+      </div>
+      </div>  
+   </body>
+   <script type="text/javascript">
+      const f = document.getElementById('form');
+        const q = document.getElementById('query');
+        const google = 'https://www.google.com/search?q=site%3A+';
+        const site = 'pagedart.com';
+      
+        function submitted(event) {
+          event.preventDefault();
+          const url = google + site + '+' + q.value;
+          const win = window.open(url, '_blank');
+          win.focus();
+        }
+      
+        f.addEventListener('submit', submitted);
+   </script>
 </html>
