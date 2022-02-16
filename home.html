@@ -54,6 +54,7 @@
 }
 .nav-item{
     font-family: sans-serif;
+
 }
 
 .dropdown {
@@ -220,6 +221,29 @@ content: '';
     opacity: 0;
   }
 }
+.collapsible {
+  background-color: black;
+  color: grey;
+  cursor: pointer;
+
+
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: black;
+  color: white;
+}
+
+.content5 {
+  padding: 0 18px;
+  display: none;
+  overflow: auto;
+  background-color: #f1f1f1;
+}
         
     </style>
 </head>
@@ -267,22 +291,34 @@ content: '';
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="/signup" style="margin-left:220px;">
+                            <a class="nav-link" target="_blank" href="/signup" style="margin-left:220px;">
                                 Sign Up <i class="fas fa-user-plus"></i>
                             </a>
                         </li>
   
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">
+                            <a class="nav-link" target="_blank" href="/login">
                                 Login <i class="fas fa-sign-in-alt"></i>
                             </a>
                         </li>
 
                         <li class="nav-item" id="xyz">
-                            <a class="nav-link" style="margin-left: 24px; z-index: 1;">
-                                <i class="fas fa-user-circle"></i>
-                            </a>
-                            <ul id="profile" style="margin-left: -10%;width: 17%; z-index:1"></ul>
+                            <button style="margin-top:8px;" type="button" class="collapsible"><i class="fas fa-user-circle"></i></button>
+                            <div class="content5" style="z-index:5; float: right; margin-top:20px; margin-left: -100px; padding:10px; position:absolute; background-color: black; width: 225px;">
+                                <p style="color: #ffff33;">User Details:</p>
+
+                                <br>
+                                 <hr style="border-color: grey;">
+                                 <p style="color: #ffff33;">My Products:</p>
+
+                                 <br>
+                                 <hr style="border-color: grey;">
+                                 <p style="color: #ffff33;">Rented Products:</p>
+                                 <br>
+                                 <br>
+                                 <button style="color:white; background-color: grey;float: right;">Log out</button>
+                            </div>
+
                         </li>
 
 
@@ -296,7 +332,7 @@ content: '';
         <br><br>
         <!-- creating sections -->
         <section id="home" class="page-section">
-            <h2>Home</h2> </section>
+            <a href="default.asp"><img src="static/pictures/MauRent.png" alt="HTML tutorial" style="width:500px;height:500px;"></a> </section>
         <section id="section1" class="page-section">
             <h2>Categories</h2> <br>
             <table style="margin-top:70px; display: flex; justify-content: center; "  >
@@ -323,7 +359,14 @@ content: '';
         
             </div></section>
         <section id="section2" class="page-section">
-            <h2>Contact Us</h2> </section>
+            <h1>Contact Us</h1>
+            <br>
+            <center><table>
+                <tr>
+                    <th><p>Takoor Devesh</p><p>+230 5288 6463</p><p>deveshtakoor@gmail.com_____</p></th>
+                    <th><p>Emilie Lamaletie</p><p>+230 5702 9030</p><p>_____emilie.lamaletie@gmail.com</p></th>
+                </tr>
+            </table></center> </section>
         
   
         <!-- JavaScript code -->
@@ -364,6 +407,20 @@ content: '';
                     }
                 });
             }).scroll();
+            var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 
             
         </script>
