@@ -586,7 +586,7 @@
                            <div class="col-lg-4 col-sm-12" style="padding-bottom: 30px;">
                               <div class="card" style="padding-bottom:10px; width: 250px; background-color: lightgrey;">
                                  <div style="height: 250px; width: 250px;">
-                                    <img src="{{ url_for('upload1', filename=list1[0]) }}" style="height: 250px; width: 250px; " >
+                                    <img src="{{ url_for('static', filename=list1[0]) }}" style="height: 250px; width: 250px; " >
                                  </div>
                                  <h4>{{column[2]}}</h4>
                                  <p class="price">Rs {{column[5]}}</p>
@@ -642,13 +642,14 @@
                <!-- The slideshow -->
                <div class="carousel-inner">
                   {% for item in list1 %}
+                  <!-- {{item}} -->
                   {% if loop.index == 1 %}
                   <div class="carousel-item active">
-                     <img src="{{ url_for('upload1', filename=item) }}" class="d-block w-100" alt="...">
+                     <img src="{{ url_for('static', filename=item) }}" class="d-block w-100" alt="...">
                   </div>
                   {% else %}
                   <div class="carousel-item">
-                     <img src="{{ url_for('upload1', filename=item) }}" class="d-block w-100" alt="...">
+                     <img src="{{ url_for('static', filename=item) }}" class="d-block w-100" alt="...">
                   </div>
                   {% endif %}
                   {%endfor%}

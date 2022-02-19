@@ -5,18 +5,14 @@ import re
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import os
-UPLOAD_FOLDER1 = 'static/upload1'
-UPLOAD_FOLDER2 = 'static/upload2'
-UPLOAD_FOLDER3 = 'static/upload3'
-UPLOAD_FOLDER4 = 'static/upload4'
+UPLOAD_FOLDER = 'static/'
+
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.secret_key = 'cairocoders-ednalan'
-app.config['UPLOAD_FOLDER1'] = UPLOAD_FOLDER1
-app.config['UPLOAD_FOLDER2'] = UPLOAD_FOLDER2
-app.config['UPLOAD_FOLDER3'] = UPLOAD_FOLDER3
-app.config['UPLOAD_FOLDER4'] = UPLOAD_FOLDER4
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 DB_HOST = "localhost"
 DB_NAME = "s10"
@@ -114,7 +110,7 @@ def c1():
     print(data)
     return render_template('c1.html', data=data)
 
-@app.route('/upload1', methods=['GET','POST'])
+@app.route('/upload', methods=['GET','POST'])
 def upload1():
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     if request.method == 'POST':
@@ -125,7 +121,7 @@ def upload1():
         files = request.files.getlist("files[]")
         for file in files:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER1'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames += filename + ';'
         filenames=filenames[:-1]
         productname1 = request.form['productname1']
@@ -158,7 +154,7 @@ def upload2():
         files = request.files.getlist("files[]")
         for file in files:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER2'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames += filename + ';'
             filenames=filenames[:-1]
         productname2 = request.form['productname2']
@@ -192,7 +188,7 @@ def upload3():
         files = request.files.getlist("files[]")
         for file in files:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER3'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames += filename + ';'
         filenames=filenames[:-1]
         productname3 = request.form['productname3']
@@ -226,7 +222,7 @@ def upload4():
         files = request.files.getlist("files[]")
         for file in files:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER4'], filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames += filename + ';'
         filenames=filenames[:-1]
         productname4 = request.form['productname4']
